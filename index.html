@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home</title>
+  <title>Hot Beans Web - Home</title>
   <style>
-    /* Reset some defaults */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -20,7 +20,7 @@
     }
 
     header {
-      background-color: #001F3F; /* Navy */
+      background-color: #001F3F;
       color: white;
       padding: 1rem 2rem;
     }
@@ -32,9 +32,19 @@
       flex-wrap: wrap;
     }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+
     nav h1 {
       font-size: 1.8rem;
-      color: #FFD700; /* Yellow title */
+      color: #FFD700;
     }
 
     nav ul {
@@ -55,7 +65,7 @@
     }
 
     nav ul li a:hover {
-      color: #D4AF37; /* Gold hover */
+      color: #D4AF37;
     }
 
     .hero {
@@ -150,7 +160,11 @@
 <body>
   <header>
     <nav role="navigation" aria-label="Main navigation">
-      <h1>Hot Beans Web</h1>
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Hot Beans Web Logo">
+        </a>
+      </div>
       <button id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
