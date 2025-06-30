@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #F5F5F5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #001F3F;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: #FFD700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #D4AF37;
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      color: #001F3F;
+      margin-bottom: 1rem;
+    }
+
+    .contact-container p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info p {
+      margin: 0.3rem 0;
+    }
+
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #001F3F;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    form button {
+      display: inline-block;
+      background-color: #FFD700;
+      color: #001F3F;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #D4AF37;
+    }
+
+    footer {
+      background-color: #001F3F;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Navigation */
+    #burger {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 100%;
+        background: #001F3F;
+        display: none;
+      }
+
+      nav ul li {
+        margin: 0;
+        border-top: 1px solid #444;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 1rem;
+      }
+
+      #burger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <h1>Hot Beans Web</h1>
+      <button id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="developers.html">Meet Our Developers</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-container">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you. Whether you have a question about careers, our work, or anything else, our team is ready to help.</p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> info@hotbeansweb.com</p>
+      <p><strong>Phone:</strong> +44 1234 567890</p>
+      <p><strong>Address:</strong> 123 Web Street, London, UK</p>
+    </div>
+
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav-links");
+
+    burger.addEventListener("click", function() {
+      const current = window.getComputedStyle(nav).display;
+      if (current === "none") {
+        nav.style.display = "flex";
+        burger.setAttribute("aria-expanded", "true");
+      } else {
+        nav.style.display = "none";
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+</body>
+</html>
