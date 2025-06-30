@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #F5F5F5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #001F3F; /* Navy */
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: #FFD700; /* Yellow title */
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #D4AF37;
+    }
+
+    .about-container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-container h2 {
+      text-align: center;
+      color: #001F3F;
+      margin-bottom: 1rem;
+    }
+
+    .about-container p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.1rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-member {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h3 {
+      color: #001F3F;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      background-color: #001F3F;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Navigation */
+    #burger {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 100%;
+        background: #001F3F;
+        display: none;
+      }
+
+      nav ul li {
+        margin: 0;
+        border-top: 1px solid #444;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 1rem;
+      }
+
+      #burger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <h1>Hot Beans Web</h1>
+      <button id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="developers.html">Meet Our Developers</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-container">
+    <h2>About Hot Beans Web</h2>
+    <p>Hot Beans Web is a forward-thinking web development agency dedicated to creating innovative digital experiences. Our talented team of developers, designers, and strategists is passionate about building the future of the web.</p>
+
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member John Doe">
+        <h3>John Doe</h3>
+        <p>Senior Web Developer with 5+ years of experience in building responsive websites and mentoring new trainees.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member Jane Smith">
+        <h3>Jane Smith</h3>
+        <p>Front-End Specialist passionate about user interfaces and creating engaging user experiences.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Team Member Alex Johnson">
+        <h3>Alex Johnson</h3>
+        <p>Full-Stack Developer who enjoys solving complex problems and exploring new technologies.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team Member Emily Davis">
+        <h3>Emily Davis</h3>
+        <p>Trainee Developer working on exciting projects while learning modern web development techniques.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav-links");
+
+    burger.addEventListener("click", function() {
+      const current = window.getComputedStyle(nav).display;
+      if (current === "none") {
+        nav.style.display = "flex";
+        burger.setAttribute("aria-expanded", "true");
+      } else {
+        nav.style.display = "none";
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+</body>
+</html>
