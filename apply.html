@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #F5F5F5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #001F3F;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: #FFD700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #D4AF37;
+    }
+
+    .apply-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .apply-container h2 {
+      text-align: center;
+      color: #001F3F;
+      margin-bottom: 1rem;
+    }
+
+    .apply-container p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #001F3F;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    form button {
+      display: inline-block;
+      background-color: #FFD700;
+      color: #001F3F;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #D4AF37;
+    }
+
+    footer {
+      background-color: #001F3F;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Navigation */
+    #burger {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 100%;
+        background: #001F3F;
+        display: none;
+      }
+
+      nav ul li {
+        margin: 0;
+        border-top: 1px solid #444;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 1rem;
+      }
+
+      #burger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <h1>Hot Beans Web</h1>
+      <button id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="developers.html">Meet Our Developers</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="apply-container">
+    <h2>Apply for a Position</h2>
+    <p>Please complete the form below to apply for one of our open positions.</p>
+
+    <form aria-label="Job application form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com">
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required aria-required="true" placeholder="Your phone number">
+
+      <label for="position">Position Applying For</label>
+      <select id="position" name="position" required aria-required="true">
+        <option value="">-- Please select --</option>
+        <option value="Front-End Developer">Front-End Developer</option>
+        <option value="Back-End Developer">Back-End Developer</option>
+        <option value="Trainee Developer">Trainee Developer</option>
+      </select>
+
+      <label for="coverletter">Cover Letter</label>
+      <textarea id="coverletter" name="coverletter" placeholder="Tell us about yourself and why you're applying." required aria-required="true"></textarea>
+
+      <label for="resume">Upload Your Resume (PDF/DOC)</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <footer role="contentinfo">
+    &copy; 2025 Hot Beans Web. All rights reserved.
+  </footer>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav-links");
+
+    burger.addEventListener("click", function() {
+      const current = window.getComputedStyle(nav).display;
+      if (current === "none") {
+        nav.style.display = "flex";
+        burger.setAttribute("aria-expanded", "true");
+      } else {
+        nav.style.display = "none";
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+</body>
+</html>
