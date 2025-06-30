@@ -27,6 +27,16 @@
       flex-wrap: wrap;
     }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+
     nav h1 {
       font-size: 1.8rem;
       color: #FFD700;
@@ -154,7 +164,11 @@
 <body>
   <header>
     <nav role="navigation" aria-label="Main navigation">
-      <h1>Hot Beans Web</h1>
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Hot Beans Web Logo">
+        </a>
+      </div>
       <button id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
       <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -181,7 +195,7 @@
         <li>Knowledge of accessibility standards</li>
         <li>Good communication skills</li>
       </ul>
-      <a href="#" class="apply-button">Apply Now</a>
+      <a href="apply.html" class="apply-button">Apply Now</a>
     </div>
 
     <div class="job-listing">
@@ -193,7 +207,7 @@
         <li>API development experience</li>
         <li>Problem-solving mindset</li>
       </ul>
-      <a href="#" class="apply-button">Apply Now</a>
+      <a href="apply.html" class="apply-button">Apply Now</a>
     </div>
 
     <div class="job-listing">
@@ -205,7 +219,7 @@
         <li>Basic understanding of HTML, CSS, and JavaScript</li>
         <li>Team player attitude</li>
       </ul>
-      <a href="#" class="apply-button">Apply Now</a>
+      <a href="apply.html" class="apply-button">Apply Now</a>
     </div>
   </section>
 
